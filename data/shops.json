@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Coffee Base KANONDO",
+        "area": "KYOTO",
+        "address": "〒604-8222 京都府京都市中京区観音堂町４６６ みやこビル 3F",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=KANONDO"
+    },
+    {
+        "name": "Coffee Base COCON KARASUMA",
+        "area": "KYOTO",
+        "address": "〒600-8411 京都府京都市下京区水銀屋町６２ COCON KARASUMA 1F",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=COCON+KARASUMA"
+    },
+    {
+        "name": "Coffee Base BnA",
+        "area": "KYOTO",
+        "address": "〒600-8024 京都府京都市下京区天満町２６７−１ 2F BnA Alter Museum",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=BnA"
+    },
+    {
+        "name": "Coffee Base NASHINOKI",
+        "area": "KYOTO",
+        "address": "〒602-0844 京都府京都市上京区染殿町６８０（梨木神社内）",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=NASHINOKI"
+    },
+    {
+        "name": "Coffee Base SHIMOGAMO",
+        "area": "KYOTO",
+        "address": "〒606-8101 京都府京都市左京区高野蓼原町１４−１",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=SHIMOGAMO"
+    },
+    {
+        "name": "fiveran kyoto coffee BASE",
+        "area": "KYOTO",
+        "address": "〒604-8174 京都府京都市中京区室町通三条上る役行者町３７７",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=fiveran+kyoto"
+    },
+    {
+        "name": "fiveran coffee BASE",
+        "area": "KYOTO",
+        "address": "〒600-8218 京都府京都市下京区七条通新町東入西境町１６７",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=fiveran+coffee+BASE"
+    },
+    {
+        "name": "fiveran osaka coffee BASE エキマルシェ大阪店",
+        "area": "OSAKA",
+        "address": "〒530-0001 大阪府大阪市北区梅田３丁目１−１",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=Ekimarche+Osaka"
+    },
+    {
+        "name": "fiveran osaka coffee BASE 松坂屋高槻店",
+        "area": "OSAKA",
+        "address": "〒569-0804 大阪府高槻市紺屋町２−１ 1階 松坂屋 高槻店",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=Matsuzakaya+Takatsuki"
+    },
+    {
+        "name": "fiveran osaka coffee BASE（グランフロント大阪）",
+        "area": "OSAKA",
+        "address": "〒530-0011 大阪府大阪市北区大深町４−２０ グランフロント大阪 南館 B1F",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=Grand+Front+Osaka"
+    },
+    {
+        "name": "Coffee Base NAGAHAMA",
+        "area": "SHIGA",
+        "address": "〒529-0212 滋賀県長浜市高月町井口１３７１−６",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=NAGAHAMA"
+    },
+    {
+        "name": "Coffee Base MEGURO",
+        "area": "TOKYO",
+        "address": "〒153-0063 東京都目黒区目黒２丁目８−８",
+        "image": "https://placehold.co/800x600/f4f4f5/18181b?text=MEGURO"
+    }
+]

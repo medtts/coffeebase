@@ -1,0 +1,18 @@
+[
+    {
+        "id": "story-01",
+        "date": "2026.05.12",
+        "category": "Roasting",
+        "title": "焙煎の音と、豆が内包する静かなる物語",
+        "summary": "火入れのわずかな違いがもたらす香味の変化。焙煎室で日々行われている対話の記録。",
+        "image": "images/stories/story-01.jpg"
+    },
+    {
+        "id": "story-02",
+        "date": "2026.04.28",
+        "category": "Interview",
+        "title": "空間に身を委ねる。京都・梨木神社境内での試み",
+        "summary": "水名神の湧き水とともに。歴史ある境内でコーヒーを淹れる意味と、そこに生まれる余白。",
+        "image": "images/stories/story-02.jpg"
+    }
+]

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruit — COFFEE BASE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Lenis用CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Lenis本体のJS (CDN) -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body class="page">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header__bar">
+            <a href="index.html" class="header__logo-link">
+                <img src="images/logo.svg" alt="COFFEE BASE Logo" class="header__logo-img" onerror="this.onerror=null; this.src='https://placehold.co/140x35/000000/FFFFFF?text=COFFEE+BASE';">
+            </a>
+            <nav class="header__nav">
+                <a href="index.html" class="header__nav-link">Top</a>
+                <a href="philosophy.html" class="header__nav-link">Philosophy</a>
+                <a href="shops.html" class="header__nav-link">Shops</a>
+                <a href="stories.html" class="header__nav-link">Stories</a>
+                <a href="online.html" class="header__nav-link">Online</a>
+                <a href="recruit.html" class="header__nav-link header__nav-link--active">Recruit</a>
+                <a href="contact.html" class="header__nav-link">Contact</a>
+            </nav>
+            <div class="header__actions">
+                <button onclick="openCartModal()" class="header__icon-btn" aria-label="Cart">
+                    <svg class="header__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span id="cart-badge" class="header__cart-badge hidden">0</span>
+                </button>
+                <button onclick="toggleMobileMenu()" class="header__menu-btn" aria-label="Menu">
+                    <svg class="header__icon header__icon--menu" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu hidden fade-in">
+            <div class="mobile-menu__list">
+                <a href="index.html" class="mobile-menu__link">Top</a>
+                <a href="philosophy.html" class="mobile-menu__link">Philosophy</a>
+                <a href="shops.html" class="mobile-menu__link">Shops</a>
+                <a href="stories.html" class="mobile-menu__link">Stories</a>
+                <a href="online.html" class="mobile-menu__link">Online</a>
+                <a href="recruit.html" class="mobile-menu__link mobile-menu__link--active">Recruit</a>
+                <a href="contact.html" class="mobile-menu__link mobile-menu__link--last">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="recruit-page fade-in">
+            <div class="page-hero">
+                <span class="page-hero__eyebrow">Careers</span>
+                <h1 class="page-hero__title">Recruit</h1>
+                <p class="page-hero__lead">私たちと共に、新しいコーヒー文化と空間を創り出す仲間を募集しています。</p>
+            </div>
+
+            <div class="recruit-page__list">
+                <div class="job-card">
+                    <span class="job-card__tag">Full-time / Part-time</span>
+                    <h3 class="job-card__title">バリスタ・店舗スタッフ (Kyoto / Tokyo)</h3>
+                    <p class="job-card__desc">
+                        スペシャルティコーヒーの抽出、接客、店舗運営全般をお任せします。コーヒーへの情熱はもちろん、店舗の美意識や空間づくりに共感できる方を求めています。
+                    </p>
+                    <div class="job-card__meta">
+                        <div><span class="job-card__meta-label">給与:</span> 経験・能力を考慮の上決定</div>
+                        <div><span class="job-card__meta-label">勤務地:</span> 京都フラッグシップ / 東京ラボ</div>
+                    </div>
+                    <div class="job-card__cta">
+                        <button onclick="showNotification('採用エントリー', '詳細な応募要項およびエントリーフォームを記載したメールをお送りいたします。')" class="job-card__apply-btn">Apply for Position</button>
+                    </div>
+                </div>
+
+                <div class="job-card">
+                    <span class="job-card__tag">Full-time</span>
+                    <h3 class="job-card__title">ロースター・焙煎士候補</h3>
+                    <p class="job-card__desc">
+                        生豆の買付からカッピング、プロファイル作成、焙煎オペレーション全般。データに基づくロースティング技術を磨きたい方へ。
+                    </p>
+                    <div class="job-card__meta">
+                        <div><span class="job-card__meta-label">給与:</span> 当社規定により優遇</div>
+                        <div><span class="job-card__meta-label">勤務地:</span> 京都ロースタリー</div>
+                    </div>
+                    <div class="job-card__cta">
+                        <button onclick="showNotification('採用エントリー', '詳細な応募要項およびエントリーフォームを記載したメールをお送りいたします。')" class="job-card__apply-btn">Apply for Position</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <img src="images/logo.svg" alt="COFFEE BASE Logo" class="footer__logo" onerror="this.onerror=null; this.src='https://placehold.co/140x35/FFFFFF/000000?text=COFFEE+BASE';">
+                <p class="footer__tagline">静謐な空間と妥協なき焙煎が生み出す、本質的なコーヒー体験のポータル。日常に深い余白を。</p>
+            </div>
+            <div>
+                <h4 class="footer__col-title">Navigation</h4>
+                <ul class="footer__links">
+                    <li><a href="index.html" class="footer__link">Top</a></li>
+                    <li><a href="philosophy.html" class="footer__link">Philosophy</a></li>
+                    <li><a href="shops.html" class="footer__link">Shops</a></li>
+                    <li><a href="stories.html" class="footer__link">Stories</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer__col-title">Store &amp; Shop</h4>
+                <ul class="footer__links">
+                    <li><a href="online.html" class="footer__link">Online Store</a></li>
+                    <li><a href="recruit.html" class="footer__link">Recruit</a></li>
+                    <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer__col-title">Newsletter</h4>
+                <p class="footer__newsletter-desc">新作豆の入荷情報や限定イベントのご案内をお届けします。</p>
+                <form onsubmit="handleSubscribe(event)" class="footer__form">
+                    <input type="email" placeholder="Your email address" required class="footer__input">
+                    <button type="submit" class="footer__submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 COFFEE BASE All Rights Reserved.</p>
+            <div class="footer__legal">
+                <a href="#" class="footer__legal-link">Privacy Policy</a>
+                <a href="#" class="footer__legal-link">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Modal -->
+    <div id="notification-modal" class="modal hidden">
+        <div class="modal__box fade-in">
+            <h3 id="modal-title" class="modal__title">Notice</h3>
+            <p id="modal-message" class="modal__message">Message content goes here.</p>
+            <button onclick="closeModal()" class="modal__close">Close</button>
+        </div>
+    </div>
+
+    <!-- Cart Drawer Modal -->
+    <div id="cart-drawer" class="cart-drawer hidden">
+        <div class="cart-drawer__panel fade-in">
+            <div>
+                <div class="cart-drawer__top">
+                    <h3 class="cart-drawer__title">Shopping Cart</h3>
+                    <button onclick="closeCartModal()" class="cart-drawer__close-btn"><svg class="cart-drawer__close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                </div>
+                <div id="cart-items-container" class="cart-drawer__items"></div>
+            </div>
+            <div class="cart-drawer__bottom">
+                <div class="cart-drawer__subtotal">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">¥0</span>
+                </div>
+                <button onclick="checkoutCart()" class="cart-drawer__checkout-btn">Proceed to Checkout</button>
+                <button onclick="closeCartModal()" class="cart-drawer__continue-btn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

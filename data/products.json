@@ -1,0 +1,262 @@
+[
+    {
+        "id": 1,
+        "name": "東ティモール レテフォホ ゴウララ村",
+        "roast": "Medium Roast",
+        "notes": "質の高い酸味と、雑味のないすっきりとした味",
+        "price": 1800,
+        "weight": "200g",
+        "category": "single",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=East+Timor"
+    },
+    {
+        "id": 2,
+        "name": "エチオピア イルガチェフェ G1 アメデラロ",
+        "roast": "Light Roast",
+        "notes": "まるで紅茶のよう。苦味はほぼ無く、華やかな香りが特徴的",
+        "price": 2100,
+        "weight": "200g",
+        "category": "single",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Ethiopia"
+    },
+    {
+        "id": 3,
+        "name": "中国 雲南 プーアルピーチ アナエロビック",
+        "roast": "Medium-Light",
+        "notes": "ベリー系の酸味に、ブランデーのような濃厚な香り",
+        "price": 2400,
+        "weight": "150g",
+        "category": "single",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=China+Yunnan"
+    },
+    {
+        "id": 4,
+        "name": "インドネシア バリ神山 カフェインレス",
+        "roast": "Medium Roast",
+        "notes": "カフェインレスなのに、しっかりとしたコーヒーの味わいと風味",
+        "price": 1950,
+        "weight": "200g",
+        "category": "decaf",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Indonesia+Decaf"
+    },
+    {
+        "id": 5,
+        "name": "エルサルバドル サンタアナ サンタマリア農園",
+        "roast": "Medium Roast",
+        "notes": "甘みと苦味のバランスが良く、すっきりとしたクリアな味わい",
+        "price": 2200,
+        "weight": "200g",
+        "category": "single",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=El+Salvador"
+    },
+    {
+        "id": 6,
+        "name": "コロンビア ナリーニョ ラ・ウニオン マイクロロット",
+        "roast": "Medium Roast",
+        "notes": "深くマイルドな酸味と芳醇なボディ、ナッツ系の滑らかな後味",
+        "price": 2300,
+        "weight": "200g",
+        "category": "single",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Colombia"
+    },
+    {
+        "id": 7,
+        "name": "ウガンダ ルウェンゾリ アフリカンムーン",
+        "roast": "Dark Roast",
+        "notes": "バランスの取れたほどよいコクと、ワイルドな苦味",
+        "price": 1850,
+        "weight": "200g",
+        "category": "single",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Uganda"
+    },
+    {
+        "id": 8,
+        "name": "ブラジル アマレロブルボン ベラビスタ農園",
+        "roast": "Medium Roast",
+        "notes": "まろやかな苦味と、チョコレートのような甘み、続く余韻",
+        "price": 1800,
+        "weight": "200g",
+        "category": "single",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Brazil"
+    },
+    {
+        "id": 9,
+        "name": "コスタリカ ジャガープロジェクト",
+        "roast": "Medium-Light",
+        "notes": "鮮やかな苦味の中に感じる甘み、そしてキレのある後味",
+        "price": 2150,
+        "weight": "200g",
+        "category": "single",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Costa+Rica"
+    },
+    {
+        "id": 10,
+        "name": "パプアニューギニア シウェット マッドマン",
+        "roast": "Dark Roast",
+        "notes": "まさにマッドなビターさ。どっしりと厚みあるボディ感",
+        "price": 2000,
+        "weight": "200g",
+        "category": "single",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Papua+New+Guinea"
+    },
+    {
+        "id": 11,
+        "name": "オリジナル コアブレンド",
+        "roast": "Medium Roast",
+        "notes": "COFFEE BASEの軸となる、バランスと甘みが際立つスタンダード",
+        "price": 1700,
+        "weight": "200g",
+        "category": "blend",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Core+Blend"
+    },
+    {
+        "id": 12,
+        "name": "オリジナル ドープブレンド",
+        "roast": "Dark Roast",
+        "notes": "深煎りの豊かなコクと、重厚で深みのあるアロマが広がるブレンド",
+        "price": 1850,
+        "weight": "200g",
+        "category": "blend",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Dope+Blend"
+    },
+    {
+        "id": 13,
+        "name": "COFFEE BASE オリジナルロゴマグカップ",
+        "roast": "Goods",
+        "notes": "日常使いしやすい、シンプルでミニマルなデザインの美濃焼マグ",
+        "price": 2200,
+        "weight": "1個",
+        "category": "goods",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Original+Mug"
+    },
+    {
+        "id": 14,
+        "name": "ペーパーレス ドリッパーセット",
+        "roast": "Tools",
+        "notes": "豆本来のオイル分までしっかり抽出できるステンレスフィルター",
+        "price": 3500,
+        "weight": "1セット",
+        "category": "tools",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Dripper+Set"
+    },
+    {
+        "id": 15,
+        "name": "シグネチャーブレンド ドリップバッグ 5個入り",
+        "roast": "Drip Bags",
+        "notes": "お湯を注ぐだけで、店舗の味をご自宅やオフィスで手軽に",
+        "price": 1200,
+        "weight": "5pcs",
+        "category": "dripbag",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Drip+Bags"
+    },
+    {
+        "id": 16,
+        "name": "ギフトボックス（3個用）",
+        "roast": "Others",
+        "notes": "コーヒー豆やドリップバッグを詰め合わせられる専用ギフト箱",
+        "price": 300,
+        "weight": "1個",
+        "category": "others",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Gift+Box"
+    },
+    {
+        "id": 17,
+        "name": "COFFEE BASE オーバーサイズロゴ Tシャツ (White)",
+        "roast": "Goods",
+        "notes": "ゆったりとしたシルエットのオリジナルコットンTシャツ",
+        "price": 4500,
+        "weight": "S / M / L / XL",
+        "category": "goods",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=T-Shirt+White"
+    },
+    {
+        "id": 18,
+        "name": "COFFEE BASE オーバーサイズロゴ Tシャツ (Black)",
+        "roast": "Goods",
+        "notes": "シックな黒ボディに映えるミニマルなロゴデザイン",
+        "price": 4500,
+        "weight": "S / M / L / XL",
+        "category": "goods",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=T-Shirt+Black"
+    },
+    {
+        "id": 19,
+        "name": "COFFEE BASE ヴィンテージウォッシュ Tシャツ (Olive)",
+        "roast": "Goods",
+        "notes": "風合いのあるピグメント加工を施したアースカラーTシャツ",
+        "price": 4800,
+        "weight": "S / M / L / XL",
+        "category": "goods",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=T-Shirt+Olive"
+    },
+    {
+        "id": 20,
+        "name": "COFFEE BASE ボタニカルダイ Tシャツ (Sand)",
+        "roast": "Goods",
+        "notes": "自然由来の染料で染め上げた優しい色合いのTシャツ",
+        "price": 4800,
+        "weight": "S / M / L / XL",
+        "category": "goods",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=T-Shirt+Sand"
+    },
+    {
+        "id": 21,
+        "name": "マットブラック コーヒーキャニスター",
+        "roast": "Goods",
+        "notes": "遮光性と密閉性に優れ、コーヒー豆の鮮度を保つ保存缶",
+        "price": 2400,
+        "weight": "1個（豆約200g用）",
+        "category": "goods",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Canister"
+    },
+    {
+        "id": 22,
+        "name": "COFFEE BASE ミニサコッシュ",
+        "roast": "Goods",
+        "notes": "ちょっとしたお出かけや散歩に便利な耐久性キャンバスサコッシュ",
+        "price": 3200,
+        "weight": "1個",
+        "category": "goods",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Sacoche"
+    },
+    {
+        "id": 23,
+        "name": "ロープロファイル 6パネルキャップ",
+        "roast": "Goods",
+        "notes": "浅めのシルエットで日常に馴染むシンプルな刺繍キャップ",
+        "price": 3800,
+        "weight": "Free",
+        "category": "goods",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Cap"
+    },
+    {
+        "id": 24,
+        "name": "ヘビーウェイト ロゴフーディー (パーカー)",
+        "roast": "Goods",
+        "notes": "裏起毛の肉厚な生地で暖かく、立体的なフードが特徴のパーカー",
+        "price": 8500,
+        "weight": "S / M / L / XL",
+        "category": "goods",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Hoodie"
+    },
+    {
+        "id": 25,
+        "name": "カフェオレベース 500ml 甘さ控えめ 微糖",
+        "roast": "Others",
+        "notes": "牛乳と割るだけで本格的なカフェオレが楽しめる希釈用リキッド",
+        "price": 2200,
+        "weight": "500ml",
+        "category": "others",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Cafe+Au+Lait+Base"
+    },
+    {
+        "id": 26,
+        "name": "焼き立て自家焙煎アーモンド 95g",
+        "roast": "Others",
+        "notes": "コーヒーとの相性を追求した、香ばしく豊かな風味のローストアーモンド",
+        "price": 745,
+        "weight": "95g",
+        "category": "others",
+        "image": "https://placehold.co/600x600/f4f4f5/18181b?text=Roasted+Almond"
+    }
+]
