@@ -242,3 +242,87 @@ maps.forEach( async ( map, index ) => {
         } )
     }
 } )
+
+
+// ==========================================
+// 左側の回転画像 ＆ 同心円ナビゲーションの連動
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const targetImg = document.getElementById('targetImg');
+    const circularNav = document.getElementById('circularNav');
+    const navItems = document.querySelectorAll('.nav-item');
+    const dotItems = document.querySelectorAll('.dot-item');
+    const sections = document.querySelectorAll('section');
+
+    const angleStep = 9;
+    const sectionAngles = [];
+
+    navItems.forEach((item, index) => {
+        const angle = index * angleStep;
+        item.style.setProperty('--item-angle', `${angle}deg`);
+        sectionAngles.push(-angle);
+    });
+
+    // ★ 現在アクティブなインデックスを保存する変数（初期値 -1）
+    let currentActiveIndex = -1; 
+
+    const update = () => {
+        const scrollY = window.scrollY;
+
+        // 画像の回転（全体のスクロール割合で計算。これは毎フレーム動かしてOK）
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = maxScroll > 0 ? Math.min(Math.max(scrollY / maxScroll, 0), 1) : 0;
+        
+        if (targetImg) {
+            targetImg.style.transform = `rotate(${-90 + progress * 90}deg)`;
+        }
+
+        // 画面中央にあるセクションの判定
+        const viewportCenter = scrollY + window.innerHeight / 2;
+        let newActiveIndex = -1; // 今回のスクロール位置でアクティブになるべきインデックス
+
+        sections.forEach((section, index) => {
+            const top = section.offsetTop;
+            if (viewportCenter >= top && viewportCenter < top + section.offsetHeight) {
+                newActiveIndex = index;
+            }
+        });
+
+        // ★★★ ここが最重要ポイント ★★★
+        // 「前回と同じセクション」にいる間は、無駄なクラスの付け外しを一切行わない
+        if (newActiveIndex !== -1 && newActiveIndex !== currentActiveIndex) {
+            
+            // 新しいインデックスに更新
+            currentActiveIndex = newActiveIndex;
+
+            if (circularNav) {
+                circularNav.style.setProperty('--nav-rotation', `${sectionAngles[newActiveIndex] ?? 0}deg`);
+            }
+
+            // PC用ナビのクラス更新（toggleを使うとシンプルになります）
+            navItems.forEach((item, index) => {
+                item.classList.toggle('is-active', index === newActiveIndex);
+            });
+
+            // スマホ用ドットのクラス更新
+            dotItems.forEach((dot, index) => {
+                dot.classList.toggle('is-active', index === newActiveIndex);
+            });
+        }
+    };
+
+    // requestAnimationFrame でスクロール時の負荷を軽減
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                update();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    window.addEventListener('resize', update);
+    update();
+});

@@ -18,6 +18,8 @@
     --color-base-950: #09090b;
     --color-red-600: #dc2626;
 
+    --color-line: #d4d4d8;
+
     --font-sans: 'Inter', sans-serif;
     --font-serif: 'Noto Serif JP', serif;
 
@@ -157,6 +159,39 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
 }
 .link-underline:hover {
     opacity: 0.6;
+}
+
+/* =========================================================
+   Notification Banner
+   ========================================================= */
+.notification-banner {
+    background-color: var(--color-base-900); /* 黒系の背景 */
+    color: var(--color-white);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 0.625rem 1rem;
+    position: relative;
+    z-index: 60; /* ヘッダー(50)よりも手前に表示 */
+}
+
+.notification-banner__text {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.notification-banner__link {
+    color: var(--color-white);
+    text-decoration: underline;
+    transition: opacity 150ms var(--ease);
+}
+
+.notification-banner__link:hover {
+    opacity: 0.7;
 }
 
 /* =========================================================
@@ -333,18 +368,145 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     flex-grow: 1;
 }
 
+/* ==========================================
+   ご提示いただいた固定コンテナと画像（変更なし）
+   ========================================== */
+.fixed-left-container {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translate(-60%, -50%);
+    z-index: 1000;
+}
+
+/* ロゴとナビが共有する正方形の枠。この中心が円の中心になる */
+.logo-wrap {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    --nav-radius: 115px;  /* 円の中心から文字の開始位置までの距離。見た目で調整 */
+}
+
+.rotating-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: rotate(-90deg);
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.3));
+    will-change: transform;
+}
+
+/* 円の中心に置く 0×0 の点。ここを軸に回転する */
+.circular-nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform: rotate(var(--nav-rotation, 0deg));
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+}
+
+/* 各項目：中心から角度ぶん回して、半径ぶん外へ出す */
+.nav-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 0 0;
+    transform: rotate(var(--item-angle)) translate(var(--nav-radius), -50%);
+    white-space: nowrap;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: #999;
+    text-decoration: none;
+    pointer-events: auto;
+    transition: color 0.3s ease;
+}
+
+.nav-item.is-active {
+    color: #111;
+    font-weight: bold;
+}
+/* ==========================================
+   スマホ用縦型ドットインジケーター（初期は非表示）
+   ========================================== */
+.mobile-dots-nav {
+    display: none;
+}
+
+/* スマホ表示時（例: 768px以下）の設定 */
+@media (max-width: 768px) {
+    /* PC用のロゴや円形ナビは非表示にする */
+    .rotating-image,
+    .circular-nav {
+        display: none;
+    }
+
+    /* スマホ用インジケーターを画面の右端（または左端）に固定配置 */
+    .mobile-dots-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        left: 130px;
+        top: 50%;
+        transform: translateY(-50%) translateZ(0);
+        height: 100px;
+        z-index: 1000;
+        pointer-events: none;
+        will-change: transform;
+    }
+
+    .dots-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* 各ドット */
+    .dot-item {
+        position: relative;
+        z-index: 2;
+        width: 6px;  /* 基本のサイズを固定 */
+        height: 6px; /* 基本のサイズを固定 */
+        background-color: #999;
+        border-radius: 50%;
+        /* width/heightの変更をやめ、transform: scale のみにする */
+        transform: scale(1);
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease;
+        will-change: transform;
+    }
+
+    /* アクティブ時は scale() で拡大する（レイアウト再計算が起きないため滑らか） */
+    .dot-item.is-active {
+        transform: scale(1.6); 
+        background-color: #111;
+    }
+}
 /* =========================================================
    1. Hero
    ========================================================= */
 .hero {
     position: relative;
-    height: 85vh;
+    height: 70vh;
     width: 100%;
     overflow: hidden;
-    background-color: var(--color-black);
+    /* background-color: var(--color-black); */
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
+    max-width: 1400px;
+    border-left: 1px solid var(--color-line);
+
 }
 .hero__video {
     position: absolute;
@@ -370,19 +532,19 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    color: var(--color-white);
+    /* color: var(--color-white); */
 }
 .hero__eyebrow {
     font-size: 0.75rem;
     line-height: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.4em;
-    color: var(--color-base-300);
+    /* color: var(--color-base-300); */
     font-weight: 300;
     display: block;
 }
 .hero__title {
-    font-family: var(--font-serif);
+    font-family: 'Bebas Neue', sans-serif;
     font-weight: 300;
     letter-spacing: 0.025em;
     line-height: 1.25;
@@ -391,7 +553,7 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
 }
 .hero__lead {
     font-size: 0.75rem;
-    color: var(--color-base-200);
+    /* color: var(--color-base-200); */
     font-weight: 300;
     letter-spacing: 0.1em;
     max-width: 32rem;
@@ -399,6 +561,13 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     line-height: 1.625;
     padding-top: 0.5rem;
 }
+.logo-white {
+    /* filter: drop-shadow(-10px 10px 15px rgba(255, 255, 255, 1)); */
+    margin: 0 auto;
+    width: 50%;
+    /* filter: brightness(0) invert(1); */
+}
+
 @media (min-width: 768px) {
     .hero__title { font-size: 3.75rem;
     line-height: 1; }
@@ -417,10 +586,13 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     margin-top: 2rem;
 }
 .philosophy {
+    background-color: var(--color-base-50);
     padding: 7rem 1.5rem;
-    max-width: 56rem;
+    max-width: 1400px;
     margin: 0 auto;
     text-align: center;
+
+    border-left: 1px solid var(--color-line);
 }
 .philosophy__eyebrow {
     font-size: 0.75rem;
@@ -436,6 +608,7 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     line-height: 1.625;
     font-size: 1.5rem;
     margin: 0;
+    margin-bottom: 48px;
 }
 @media (min-width: 768px) {
     .philosophy__title { font-size: 2.25rem;
@@ -467,15 +640,20 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
    3. Gateway (shops hub + map)
    ========================================================= */
 .gateway {
-    padding: 5rem 0;
-    background-color: var(--color-base-50);
+    padding: 7rem 0 0;
+    margin: 0 auto;
+    background-color: #fff;
     border-top: 1px solid var(--color-base-200);
     border-bottom: 1px solid var(--color-base-200);
+
+    max-width: 1400px;
+    border-left: 1px solid var(--color-line);
+
 }
 .gateway__inner {
-    max-width: 80rem;
+    /* max-width: 80rem; */
     margin: 0 auto;
-    padding: 0 1.5rem;
+    /* padding: 0 1.5rem; */
 }
 .gateway__header > * + * {
     margin-top: 0.75rem;
@@ -499,6 +677,7 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     font-size: 1.5rem;
     line-height: 2rem;
     margin: 0;
+    margin-bottom: 48px;
 }
 @media (min-width: 768px) {
     .gateway__title { font-size: 2.25rem;
@@ -513,7 +692,7 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
 .gateway__grid {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 1.5rem;
+    /* gap: 0.25rem; */
 }
 @media (min-width: 640px) {
     .gateway__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -526,15 +705,16 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     display: block;
     aspect-ratio: 3 / 4;
     overflow: hidden;
-    background-color: var(--color-black);
+    /* background-color: var(--color-black); */
     text-decoration: none;
+    border: 1px solid var(--color-line);
 }
 .gateway__card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(1);
-    opacity: 0.7;
+    /* filter: grayscale(1); */
+    opacity: 0.8;
     transition: transform 500ms var(--ease);
 }
 .gateway__card:hover .gateway__card-img {
@@ -570,9 +750,10 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
    4. Stories
    ========================================================= */
 .stories {
-    padding: 7rem 1.5rem;
-    max-width: 80rem;
+    padding: 7rem 0 0;
+    max-width: 1400px;
     margin: 0 auto;
+    border-left: 1px solid var(--color-line);
 }
 .stories__header {
     display: flex;
@@ -608,19 +789,19 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
 .stories__grid {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 2rem;
+    /* gap: 2rem; */
 }
 @media (min-width: 768px) {
-    .stories__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .stories__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 .story {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    /* gap: 1rem; */
     cursor: pointer;
 }
 .story__thumb {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 3 / 4;
     background-color: var(--color-base-100);
     overflow: hidden;
     border: 1px solid var(--color-base-200);
@@ -639,6 +820,9 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     margin-top: 0.5rem;
 }
 .story__body {
+    border: 1px solid var(--color-line);
+    padding: 10px 10px 40px;
+    aspect-ratio: 4 / 3;
 }
 .story__meta {
     font-size: 10px;
@@ -673,13 +857,19 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
    ========================================================= */
 .news {
     padding: 5rem 0;
+    margin: 0 auto;
     background-color: var(--color-base-50);
     border-top: 1px solid var(--color-base-200);
+    max-width: 1400px;
+    border-left: 1px solid var(--color-line);
 }
 .news__inner {
     max-width: 56rem;
     margin: 0 auto;
     padding: 0 1.5rem;
+
+        /* border-left: 1px solid #000; */
+
 }
 .news__header {
     display: flex;
@@ -772,9 +962,11 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
    6. Instagram
    ========================================================= */
 .instagram {
-    padding: 7rem 1.5rem;
-    max-width: 80rem;
+    padding: 7rem 0 0;
+    max-width: 1400px;
     margin: 0 auto;
+    border-left: 1px solid var(--color-line);
+    background-color: var(--color-base-50);
 }
 .instagram__header > * + * {
     margin-top: 0.75rem;
@@ -798,6 +990,7 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     font-size: 1.5rem;
     line-height: 2rem;
     margin: 0;
+    margin-bottom: 48px;
 }
 @media (min-width: 768px) {
     .instagram__title { font-size: 2.25rem;
@@ -812,7 +1005,7 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
 .instagram__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    /* gap: 1rem; */
 }
 @media (min-width: 768px) {
     .instagram__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -820,9 +1013,10 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
 .instagram__post {
     position: relative;
     display: block;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 4;
     background-color: var(--color-base-100);
     overflow: hidden;
+    border: 1px solid var(--color-line);
 }
 .instagram__img {
     width: 100%;
@@ -1191,6 +1385,7 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     font-size: 1.875rem;
     line-height: 2.25rem;
     margin: 0;
+    margin-bottom: 48px;
 }
 @media (min-width: 768px) {
     .philosophy-page__title { font-size: 3rem;
@@ -1288,6 +1483,7 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
     font-size: 1.875rem;
     line-height: 2.25rem;
     margin: 0;
+    margin-bottom: 48px;
 }
 @media (min-width: 768px) {
     .page-hero__title { font-size: 3rem;

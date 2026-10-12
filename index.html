@@ -6,8 +6,7 @@
     <title>COFFEE BASE — Beyond a cup of coffee.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">    <link rel="stylesheet" href="css/style.css">
 
     <!-- Lenis用CSS -->
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
@@ -19,6 +18,13 @@
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 </head>
 <body class="page">
+    <!-- banner -->
+    <div class="notification-banner">
+        <p class="notification-banner__text">
+            【重要】年末年始の各店舗の営業時間のお知らせ 
+            <a href="#" class="notification-banner__link">詳細はこちら &rarr;</a>
+        </p>
+    </div>
 
     <!-- Header -->
     <header class="header">
@@ -61,14 +67,47 @@
     <!-- Main Content -->
     <main class="main">
 
+        <div class="fixed-left-container">
+            <div class="logo-wrap">
+                <img src="images/logo.svg" alt="" class="rotating-image" id="targetImg">
+
+                <div class="circular-nav" id="circularNav">
+                    <a href="#top" class="nav-item">TOP</a>
+                    <a href="#philosophy" class="nav-item">PHILOSOPHY</a>
+                    <a href="#shops" class="nav-item">SHOPS</a>
+                    <a href="#stories" class="nav-item">STORIES</a>
+                    <a href="#news" class="nav-item">NEWS</a>
+                    <a href="#sns" class="nav-item">SNS</a>
+                </div>
+
+                <!-- スマホ用の縦型ドットインジケーター -->
+                <div class="mobile-dots-nav">
+                    <div class="dots-line"></div>
+                    <div class="dot-item is-active"></div>
+                    <div class="dot-item"></div>
+                    <div class="dot-item"></div>
+                    <div class="dot-item"></div>
+                    <div class="dot-item"></div>
+                    <div class="dot-item"></div>
+                    <!-- <div class="dot-item"></div> -->
+                </div>
+            </div>
+        </div>
+
+        
+
         <!-- 1. メインビジュアル (映像演出 / フォールバック画像) -->
-        <section class="hero">
-            <video autoplay muted loop playsinline class="hero__video">
+        <section id="top" class="hero">
+            <!-- <video autoplay muted loop playsinline class="hero__video">
                 <source src="videos/hero-bg.mp4" type="video/mp4">
-            </video>
-            <div class="hero__gradient"></div>
+            </video> -->
+            <!-- <div class="hero__gradient"></div> -->
+
+            
 
             <div class="hero__content fade-in">
+
+                <img src="images/logo.svg" class="logo-white">
                 <span class="hero__eyebrow">Specialty Coffee Roaster</span>
                 <h1 class="hero__title">
                     COFFEE BASE
@@ -80,8 +119,8 @@
         </section>
 
         <!-- 2. ブランドメッセージ ＆ 世界観の要約・導入 -->
-        <section class="philosophy">
-            <span class="philosophy__eyebrow">Philosophy &amp; Vision</span>
+        <section id="philosophy" class="philosophy">
+            <span class="philosophy__eyebrow">Philosophy</span>
             <h2 class="philosophy__title">
                 Beyond a cup of coffee.
             </h2>
@@ -101,16 +140,16 @@
         </section>
 
         <!-- 3. エリア・店舗ハブ (Gateway) -->
-        <section class="gateway">
+        <section id="shops" class="gateway">
             <div class="gateway__inner">
                 <div class="gateway__header">
                     <span class="gateway__eyebrow">Locations</span>
-                    <h2 class="gateway__title">Shops Gateway</h2>
+                    <h2 class="gateway__title">Shops</h2>
                     <p class="gateway__desc">訪れる街に合わせて、各エリアの店舗情報をご覧いただけます。</p>
                 </div>
 
                 <div class="map"></div>
-                <p style="margin-top: 40px; font-size: 12px;">
+                <p style="margin-bottom: 80px; font-size: 12px; text-align: center;">
                 <small>
                     画像引用: 
                     <a href="https://commons.wikimedia.org/wiki/File:Japan_Map_Lincun.svg" target="_blank" rel="noopener">Japan_Map_Lincun.svg</a> 
@@ -122,7 +161,7 @@
                 <div class="gateway__grid">
                     <!-- KYOTO -->
                     <a href="shops.html#kyoto" class="gateway__card">
-                        <img src="https://placehold.co/600x800/27272a/ffffff?text=KYOTO" alt="Kyoto Shops" class="gateway__card-img">
+                        <img src="images/kyoto.webp" alt="Kyoto Shops" class="gateway__card-img">
                         <div class="gateway__card-overlay">
                             <span class="gateway__card-tag">7 Locations</span>
                             <h3 class="gateway__card-title">KYOTO</h3>
@@ -130,7 +169,7 @@
                     </a>
                     <!-- OSAKA -->
                     <a href="shops.html#osaka" class="gateway__card">
-                        <img src="https://placehold.co/600x800/27272a/ffffff?text=OSAKA" alt="Osaka Shops" class="gateway__card-img">
+                        <img src="images/osaka.jpg" alt="Osaka Shops" class="gateway__card-img">
                         <div class="gateway__card-overlay">
                             <span class="gateway__card-tag">3 Locations</span>
                             <h3 class="gateway__card-title">OSAKA</h3>
@@ -138,7 +177,7 @@
                     </a>
                     <!-- SHIGA -->
                     <a href="shops.html#shiga" class="gateway__card">
-                        <img src="https://placehold.co/600x800/27272a/ffffff?text=SHIGA" alt="Shiga Shops" class="gateway__card-img">
+                        <img src="images/shiga.jpg" alt="Shiga Shops" class="gateway__card-img">
                         <div class="gateway__card-overlay">
                             <span class="gateway__card-tag">1 Location</span>
                             <h3 class="gateway__card-title">SHIGA</h3>
@@ -146,7 +185,7 @@
                     </a>
                     <!-- TOKYO -->
                     <a href="shops.html#tokyo" class="gateway__card">
-                        <img src="https://placehold.co/600x800/27272a/ffffff?text=TOKYO" alt="Tokyo Shops" class="gateway__card-img">
+                        <img src="images/tokyo.jpg" alt="Tokyo Shops" class="gateway__card-img">
                         <div class="gateway__card-overlay">
                             <span class="gateway__card-tag">1 Location</span>
                             <h3 class="gateway__card-title">TOKYO</h3>
@@ -156,62 +195,9 @@
             </div>
         </section>
 
-        <!-- 4. Stories / Journal ピックアップ -->
-        <section class="stories">
-            <div class="stories__header">
-                <div>
-                    <span class="stories__eyebrow">Journal</span>
-                    <h2 class="stories__title">Stories</h2>
-                </div>
-                <a href="stories.html" class="link-underline">
-                    View All Stories &rarr;
-                </a>
-            </div>
-            <div class="stories__grid">
-                <!-- Story Item 1 -->
-                <article class="story" onclick="location.href='stories.html'">
-                    <div class="story__thumb">
-                        <img src="https://placehold.co/800x500/f4f4f5/18181b?text=Story+01" alt="Story thumbnail" class="story__thumb-img">
-                    </div>
-                    <div class="story__body">
-                        <span class="story__meta">2026.05.12 / Roasting</span>
-                        <h3 class="story__title">焙煎の音と、豆が内包する静かなる物語</h3>
-                        <p class="story__excerpt">
-                            火入れのわずかな違いがもたらす香味の変化。焙煎室で日々行われている対話の記録。
-                        </p>
-                    </div>
-                </article>
-                <!-- Story Item 2 -->
-                <article class="story" onclick="location.href='stories.html'">
-                    <div class="story__thumb">
-                        <img src="https://placehold.co/800x500/f4f4f5/18181b?text=Story+02" alt="Story thumbnail" class="story__thumb-img">
-                    </div>
-                    <div class="story__body">
-                        <span class="story__meta">2026.04.28 / Interview</span>
-                        <h3 class="story__title">空間に身を委ねる。京都・梨木神社境内での試み</h3>
-                        <p class="story__excerpt">
-                            水名神の湧き水とともに。歴史ある境内でコーヒーを淹れる意味と、そこに生まれる余白。
-                        </p>
-                    </div>
-                </article>
-                <!-- Story Item 3 -->
-                <article class="story" onclick="location.href='stories.html'">
-                    <div class="story__thumb">
-                        <img src="https://placehold.co/800x500/f4f4f5/18181b?text=Story+03" alt="Story thumbnail" class="story__thumb-img">
-                    </div>
-                    <div class="story__body">
-                        <span class="story__meta">2026.04.15 / Lifestyle</span>
-                        <h3 class="story__title">一杯のコーヒーが日常のスイッチを切り替える</h3>
-                        <p class="story__excerpt">
-                            慌ただしい毎日に、意図的に「何もしない時間」を作り出すためのルーティン。
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </section>
 
-        <!-- 5. NEWS / EVENTS トピックス -->
-        <section class="news">
+        <!-- 4. NEWS / EVENTS トピックス -->
+        <section id="news" class="news">
             <div class="news__inner">
                 <div class="news__header">
                     <div>
@@ -257,28 +243,96 @@
             </div>
         </section>
 
+        <!-- 5. Stories / Journal ピックアップ -->
+        <section id="stories" class="stories">
+            <div class="stories__header">
+                <div>
+                    <span class="stories__eyebrow">Journal</span>
+                    <h2 class="stories__title">Stories</h2>
+                </div>
+                <a href="stories.html" class="link-underline">
+                    View All Stories &rarr;
+                </a>
+            </div>
+            <div class="stories__grid">
+                <!-- Story Item 1 -->
+                <article class="story" onclick="location.href='stories.html'">
+                    <div class="story__thumb">
+                        <img src="https://placehold.co/300x400/f4f4f5/18181b?text=Story+01" alt="Story thumbnail" class="story__thumb-img">
+                    </div>
+                    <div class="story__body">
+                        <span class="story__meta">2026.05.12 / Roasting</span>
+                        <h3 class="story__title">焙煎の音と、豆が内包する静かなる物語</h3>
+                        <p class="story__excerpt">
+                            火入れのわずかな違いがもたらす香味の変化。焙煎室で日々行われている対話の記録。
+                        </p>
+                    </div>
+                </article>
+                <!-- Story Item 2 -->
+                <article class="story" onclick="location.href='stories.html'">
+                    <div class="story__thumb">
+                        <img src="https://placehold.co/300x400/f4f4f5/18181b?text=Story+02" alt="Story thumbnail" class="story__thumb-img">
+                    </div>
+                    <div class="story__body">
+                        <span class="story__meta">2026.04.28 / Interview</span>
+                        <h3 class="story__title">空間に身を委ねる。京都・梨木神社境内での試み</h3>
+                        <p class="story__excerpt">
+                            水名神の湧き水とともに。歴史ある境内でコーヒーを淹れる意味と、そこに生まれる余白。
+                        </p>
+                    </div>
+                </article>
+                <!-- Story Item 3 -->
+                <article class="story" onclick="location.href='stories.html'">
+                    <div class="story__thumb">
+                        <img src="https://placehold.co/300x400/f4f4f5/18181b?text=Story+03" alt="Story thumbnail" class="story__thumb-img">
+                    </div>
+                    <div class="story__body">
+                        <span class="story__meta">2026.04.15 / Lifestyle</span>
+                        <h3 class="story__title">一杯のコーヒーが日常のスイッチを切り替える</h3>
+                        <p class="story__excerpt">
+                            慌ただしい毎日に、意図的に「何もしない時間」を作り出すためのルーティン。
+                        </p>
+                    </div>
+                </article>
+                <!-- Story Item 4 -->
+                <article class="story" onclick="location.href='stories.html'">
+                    <div class="story__thumb">
+                        <img src="https://placehold.co/300x400/f4f4f5/18181b?text=Story+04" alt="Story thumbnail" class="story__thumb-img">
+                    </div>
+                    <div class="story__body">
+                        <span class="story__meta">2026.04.15 / Lifestyle</span>
+                        <h3 class="story__title">一杯のコーヒーが日常のスイッチを切り替える</h3>
+                        <p class="story__excerpt">
+                            慌ただしい毎日に、意図的に「何もしない時間」を作り出すためのルーティン。
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
         <!-- 6. Instagram / SNS Feed -->
-        <section class="instagram">
+        <section id="sns" class="instagram">
             <div class="instagram__header">
-                <span class="instagram__eyebrow">Instagram</span>
-                <h2 class="instagram__title">@coffeebase_kyoto</h2>
-                <p class="instagram__desc">日々の風景や店舗のシグネチャーを切り取って。</p>
+                <span class="instagram__eyebrow">SNS</span>
+                <h2 class="instagram__title">Instagram</h2>
+                <p class="instagram__desc">@coffeebasekanondo</p>
             </div>
             <div class="instagram__grid">
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram__post">
-                    <img src="https://placehold.co/600x600/f4f4f5/18181b?text=IG+01" alt="Instagram post" class="instagram__img">
+                    <img src="https://placehold.co/300x400/f4f4f5/18181b?text=IG+01" alt="Instagram post" class="instagram__img">
                     <div class="instagram__overlay">View</div>
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram__post">
-                    <img src="https://placehold.co/600x600/f4f4f5/18181b?text=IG+02" alt="Instagram post" class="instagram__img">
+                    <img src="https://placehold.co/300x400/f4f4f5/18181b?text=IG+02" alt="Instagram post" class="instagram__img">
                     <div class="instagram__overlay">View</div>
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram__post">
-                    <img src="https://placehold.co/600x600/f4f4f5/18181b?text=IG+03" alt="Instagram post" class="instagram__img">
+                    <img src="https://placehold.co/300x400/f4f4f5/18181b?text=IG+03" alt="Instagram post" class="instagram__img">
                     <div class="instagram__overlay">View</div>
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram__post">
-                    <img src="https://placehold.co/600x600/f4f4f5/18181b?text=IG+04" alt="Instagram post" class="instagram__img">
+                    <img src="https://placehold.co/300x400/f4f4f5/18181b?text=IG+04" alt="Instagram post" class="instagram__img">
                     <div class="instagram__overlay">View</div>
                 </a>
             </div>
